@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DN Scent Co. Philippines</title>
+    
+    <link rel="stylesheet" href="Perfume-Website.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="perfume/Logo for men.jpg" alt="Company Logo" class="company-logo">
+            <a href="#" class="company-name">DN Scent Co.</a>
+        </div>
+
+       
+
+            <ul class="header-menu">
+                <li><a href="#featured-products">FEATURED PRODUCT</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="https://www.facebook.com/DNScentCo" target="_blank">CONTACT US</a></li>
+            </ul>
+            
+        </div>
+    </header>
+
+    <!-- Slider Section -->
+    <div class="slider-container">
+        <div class="slider">
+            <img src="perfume/Bombshell.png" alt="Slide 1">
+            <img src="perfume/Coolwater.png" alt="Slide 2">
+            <img src="perfume/Eclat.png" alt="Slide 3">
+            <img src="perfume/Hugo Boss.png" alt="Slide 4">
+            <img src="perfume/Lacoste Black.png" alt="Slide 5">
+            <img src="perfume/Miss Dior.png" alt="Slide 6">
+            <img src="perfume/Paris Hilton.png" alt="Slide 7">
+            <img src="perfume/Polo Sport.png" alt="Slide 8">
+            <img src="perfume/Touch of Pink.png" alt="Slide 9">
+            <img src="perfume/Vanilla Lace.png" alt="Slide 10">
+            <img src="perfume/Versace Eros.png" alt="Slide 11">
+        </div>
+        <div class="dots-container">
+            <!-- Generate dots for each image dynamically -->
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        </div>
+        <script>
+            let currentSlide = 0; // Keep track of the current slide
+            const slides = document.querySelectorAll('.slider img'); // Select all slides
+            const dots = document.querySelectorAll('.dot'); // Select all dots
+            const slideInterval = 4000; // 4 seconds interval
+        
+            function showSlide(index) {
+                // Reset all slides and dots
+                slides.forEach((slide, i) => {
+                    slide.style.transform = `translateX(-${index * 100}%)`; // Move slides
+                    dots[i].classList.remove('active'); // Deactivate all dots
+                });
+        
+                // Activate the current dot
+                dots[index].classList.add('active');
+            }
+        
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length; // Go to the next slide (loop back to start)
+                showSlide(currentSlide);
+            }
+        
+            // Set the slider to automatically move every 4 seconds
+            setInterval(nextSlide, slideInterval);
+        
+            // Allow clicking dots to jump to a specific slide
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+        </script>
+
+        <!-- History of Perfume Section -->
+            <section id="history" style="padding: 40px 20px; 
+                     text-align: center; 
+                     background-color: rgba(0, 0, 0, 0.7); 
+                     color: white; 
+                     border-radius: 10px;">
+            <h2 style="color: gold; 
+                       font-size: 32px; 
+                       margin-bottom: 20px;">The History of Perfume</h2>
+            <p style="font-size: 20px; 
+                     line-height: 1.9;
+                     font-weight: bold;
+                      max-width: 1400px; 
+                      margin: 0 auto;">
+        Perfume has a long and rich history that dates back to ancient civilizations. The Egyptians were the first to document the art of perfumery, using scented oils and resins in their religious ceremonies and daily lives. The ancient Greeks and Romans also embraced fragrance, with perfume becoming a symbol of luxury and status. Throughout the centuries, perfume production evolved with advancements in chemistry and the discovery of new ingredients. 
+        In the 19th century, the perfume industry began to take shape as we know it today, with iconic fragrance houses and master perfumers creating timeless scents. Today, perfume remains an essential part of fashion, culture, and self-expression, with endless varieties to suit every individual and occasion.
+    </p>
+</section>
+
+           <section id="featured-products" style="padding: 40px 20px; text-align: center;">
+                     <h2 style="color: gold; 
+                     font-size: 32px; 
+                     margin-bottom: 20px;">Featured Products</h2>
+         <div class="featured-container">
+        <!-- Product 1 -->
+        <div class="product-box">
+            <img src="perfume/Bombshell.png" alt="Bombshell" class="product-image">
+            <h3>Bombshell</h3>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-box">
+            <img src="perfume/Eclat.png" alt="Eclat Lanvin" class="product-image">
+            <h3>Eclat Lanvin</h3>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-box">
+            <img src="perfume/Miss Dior.png" alt="Miss Dior" class="product-image">
+            <h3>Miss Dior</h3>
+        </div>
+        <!-- Product 4 -->
+        <div class="product-box">
+            <img src="perfume/Versace Eros.png" alt="Versace Eros" class="product-image">
+            <h3>Versace Eros</h3>
+        </div>
+    </div>
+</section>
+
+        
+    </div>
+
+    <!-- Scent Section -->
+    <div class="scent-section">
+        <!-- Men Scents Box -->
+        <div class="scent-box" onclick="openPopup('men')">
+            <img src="perfume/men.png" alt="Men's Scent 1">
+            <h2>Men's Scents</h2>
+            <p>Explore our premium scents for men.</p>
+        </div>
+
+        <!-- Women Scents Box -->
+        <div class="scent-box" onclick="openPopup('women')">
+            <img src="perfume/women.png" alt="Women's Scent 1">
+            <h2>Women's Scents</h2>
+            <p>Discover our exquisite fragrances for women.</p>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+         <section id="about" style="margin: 40px 0;
+                 text-align: center; 
+                 padding: 20px; 
+                 background-color: rgba(0, 0, 0, 0.7); 
+                 color: white; 
+                 border-radius: 10px;">
+         <h2 style="color: gold; 
+                 font-size: 32px; 
+                 margin-bottom: 20px;">About Us</h2>
+         <p style="font-size: 25px; 
+                 line-height: 1.8; 
+                 max-width: 800px; 
+                 margin: 0 auto;">
+        DN Scent Co. Philippines offers a premium selection of carefully curated fragrances designed to suit every personality and occasion.
+        Our mission is to bring luxury and elegance within reach, featuring a blend of classic and contemporary scents for both men and women.
+        Discover the essence of sophistication with our exclusive collection that combines high-quality ingredients with timeless artistry.
+        Let DN Scent Co. be your gateway to an unforgettable fragrance experience.
+    </p>
+</section>
+
+    <!-- Popups -->
+    <!-- Women's Scent Popup -->
+    <div class="popup" id="women-popup">
+        <div class="popup-header">
+            <span>Women's Scents Collection</span>
+            <button class="close-btn" onclick="closePopup()">×</button>
+        </div>
+        <div class="scent-grid">
+            <div class="scent-item" onclick="openScentDetail('chanel')">
+                <img src="perfume/Bombshell.png" alt="Scent 1">
+                <h4>Victoria Secret Bombshell</h4>
+            </div>
+            <div class="scent-item" onclick="openScentDetail('dior')">
+                <img src="perfume/Eclat.png" alt="Scent 2">
+                <h4>Eclat Lanvine</h4>
+            </div>
+            <div class="scent-item" onclick="openScentDetail('viktor')">
+                <img src="perfume/Miss Dior.png" alt="Scent 3">
+                <h4>Miss Dior by Dior</h4>
+            </div>
+            <div class="scent-item" onclick="openScentDetail('jlo')">
+                <img src="perfume/Paris Hilton.png" alt="Scent 4">
+                <h4>Paris Hilton</h4>
+            </div>
+            <div class="scent-item" onclick="openScentDetail('gucci')">
+                <img src="perfume/Touch of Pink.png" alt="Scent 5">
+                <h4>Lacoste Touch of Pink</h4>
+            </div>
+            <div class="scent-item" onclick="openScentDetail('ysl')">
+                <img src="perfume/Vanilla Lace.png" alt="Scent 6">
+                <h4>Victoria Secret Vanilla Lace</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Men's Scent Popup -->
+    <div class="popup" id="men-popup">
+        <div class="popup-header">
+            <span>Men's Scents Collection</span>
+            <button class="close-btn" onclick="closePopup()">×</button>
+        </div>
+        <div class="scent-grid">
+            <div class="scent-item" onclick="openScentDetail('coolwater')">
+                <img src="perfume/Coolwater.png" alt="Scent 1">
+                <h4>Cool Water</h4>
+            </div>
+            <div class="scent-item" onclick="openScentDetail('hugoboss')">
+                <img src="perfume/Hugo Boss.png" alt="Scent 2">
+                <h4>Hugo Boss</h4>
+            </div>
+            <div class="scent-item" onclick="openScentDetail('lacoste')">
+                <img src="perfume/Lacoste Black.png" alt="Scent 3">
+                <h4>Lacoste Black</h4>
+            </div>
+            <div class="scent-item" onclick="openScentDetail('polo')">
+                <img src="perfume/Polo Sport.png" alt="Scent 4">
+                <h4>Polo Sport</h4>
+            </div>
+            <div class="scent-item" onclick="openScentDetail('versace')">
+                <img src="perfume/Versace Eros.png" alt="Scent 5">
+                <h4>Versace Eros</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scent Detail Popup -->
+    <div class="popup" id="scent-detail-popup">
+        <div class="popup-header">
+            <span id="scent-name"></span>
+            <button class="close-btn" onclick="closePopup()">×</button>
+        </div>
+        <div class="scent-detail-container">
+            <div class="scent-image">
+                <img id="scent-image" src="" alt="Scent Image">
+            </div>
+            <div class="scent-info">
+                <p id="scent-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
+
+    <script>
+        function openScentDetail(scent) {
+            let scentName = "";
+            let scentImage = "";
+            let scentDescription = "";
+
+            switch(scent) {
+                case 'coolwater':
+                    scentName = "Cool Water";
+                    scentImage = "perfume/Coolwater.png";
+                    scentDescription = "A fresh, aquatic scent with a blend of lavender, mint, and sandalwood.";
+                    break;
+                case 'hugoboss':
+                    scentName = "Hugo Boss";
+                    scentImage = "perfume/Hugo Boss.png";
+                    scentDescription = "A sophisticated fragrance with notes of apple, cinnamon, and musk.";
+                    break;
+                case 'lacoste':
+                    scentName = "Lacoste Black";
+                    scentImage = "perfume/Lacoste Black.png";
+                    scentDescription = "A bold and spicy fragrance with citrus, lavender, and patchouli.";
+                    break;
+                case 'polo':
+                    scentName = "Polo Sport";
+                    scentImage = "perfume/Polo Sport.png";
+                    scentDescription = "A sporty scent with fresh citrus, green notes, and a touch of cedarwood.";
+                    break;
+                case 'versace':
+                    scentName = "Versace Eros";
+                    scentImage = "perfume/Versace Eros.png";
+                    scentDescription = "A rich and masculine fragrance with mint, green apple, and tonka bean.";
+                    break;
+                case 'chanel':
+                    scentName = "Victoria Secret Bombshell";
+                    scentImage = "perfume/Bombshell.png";
+                    scentDescription = "A classic floral scent with rose, jasmine, and sandalwood.";
+                    break;
+                case 'dior':
+                    scentName = "Eclat Lanvine";
+                    scentImage = "perfume/Eclat.png";
+                    scentDescription = "A romantic fragrance with notes of rose, peony, and patchouli.";
+                    break;
+                case 'viktor':
+                    scentName = "Miss Dior by Dior";
+                    scentImage = "perfume/Miss Dior.png";
+                    scentDescription = "A floral explosion of jasmine, orange blossom, and patchouli.";
+                    break;
+                case 'jlo':
+                    scentName = "Paris Hilton";
+                    scentImage = "perfume/Paris Hilton.png";
+                    scentDescription = "A fresh and radiant scent with citrus, jasmine, and vanilla.";
+                    break;
+                case 'gucci':
+                    scentName = "Lacoste Touch of Pink";
+                    scentImage = "perfume/Touch of Pink.png";
+                    scentDescription = "A rich and floral fragrance with tuberose, jasmine, and sandalwood.";
+                    break;
+                case 'ysl':
+                    scentName = "Victoria Secret Vanilla Lace";
+                    scentImage = "perfume/Vanilla Lace.png";
+                    scentDescription = "A sweet and modern fragrance with strawberry, jasmine, and patchouli.";
+    break;
+                    
+            }
+
+            document.getElementById('scent-name').innerText = scentName;
+            document.getElementById('scent-image').src = scentImage;
+            document.getElementById('scent-description').innerText = scentDescription;
+
+            document.getElementById('scent-detail-popup').style.display = 'flex';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+
+        function openPopup(category) {
+            document.getElementById(category + '-popup').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.querySelectorAll('.popup').forEach(popup => {
+                popup.style.display = 'none';
+            });
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
